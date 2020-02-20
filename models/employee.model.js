@@ -13,6 +13,9 @@ var employeeSchema = new mongoose.Schema({
     },
     city: {
         type: String
+    },
+    pwd: {
+        type: String
     }
 });
 
