@@ -24,6 +24,7 @@ router.post('/login', async function(req, res, next) {
 
     if (user.pwd != pwd) {
         res.redirect('/auth/login');
+        console.log('1');
         return;
     } else {
         res.redirect('/employee');

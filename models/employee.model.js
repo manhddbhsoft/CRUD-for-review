@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var employeeSchema = new mongoose.Schema({
+var employeeSchema = new Schema({
     fullName: {
         type: String,
         required: 'This field is required.'
@@ -25,4 +26,5 @@ employeeSchema.path('email').validate((val) => {
     return emailRegex.test(val);
 }, 'Invalid e-mail.');
 
-mongoose.model('Employee', employeeSchema);
+const Employee = mongoose.model('Employee', employeeSchema);
+module.exports = Employee;
